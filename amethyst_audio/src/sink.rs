@@ -1,6 +1,7 @@
 use std::io::Cursor;
 
-use rodio::{Decoder, Sink};
+use atrac3p_decoder::Decoder;
+use rodio::Sink;
 
 use crate::{output::Output, source::Source, DecoderError};
 
@@ -107,26 +108,8 @@ mod tests {
 
     #[test]
     #[cfg(target_os = "linux")]
-    fn test_append_wav() {
-        test_append("tests/sound_test.wav", true);
-    }
-
-    #[test]
-    #[cfg(target_os = "linux")]
-    fn test_append_mp3() {
-        test_append("tests/sound_test.mp3", true);
-    }
-
-    #[test]
-    #[cfg(target_os = "linux")]
-    fn test_append_flac() {
-        test_append("tests/sound_test.flac", true);
-    }
-
-    #[test]
-    #[cfg(target_os = "linux")]
-    fn test_play_ogg() {
-        test_append("tests/sound_test.ogg", true);
+    fn test_append_at3() {
+        test_append("tests/sound_test.at3", true);
     }
 
     #[test]

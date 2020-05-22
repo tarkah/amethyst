@@ -11,7 +11,7 @@
 pub use self::{
     bundle::AudioBundle,
     components::*,
-    formats::{FlacFormat, Mp3Format, OggFormat, WavFormat},
+    formats::AT3Format,
     sink::AudioSink,
     source::{Source, SourceHandle},
     systems::*,

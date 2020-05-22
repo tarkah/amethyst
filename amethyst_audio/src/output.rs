@@ -7,11 +7,11 @@ use std::{
     sync::Arc,
 };
 
+use atrac3p_decoder::Decoder;
 use cpal::traits::DeviceTrait;
 use log::error;
 use rodio::{
-    default_output_device, output_devices, Decoder, Device, Devices, OutputDevices, Sink,
-    Source as RSource,
+    default_output_device, output_devices, Device, Devices, OutputDevices, Sink, Source as RSource,
 };
 
 use amethyst_core::ecs::World;
@@ -156,26 +156,8 @@ mod tests {
 
     #[test]
     #[cfg(target_os = "linux")]
-    fn test_play_wav() {
-        test_play("tests/sound_test.wav", true)
-    }
-
-    #[test]
-    #[cfg(target_os = "linux")]
-    fn test_play_mp3() {
-        test_play("tests/sound_test.mp3", true);
-    }
-
-    #[test]
-    #[cfg(target_os = "linux")]
-    fn test_play_flac() {
-        test_play("tests/sound_test.flac", true);
-    }
-
-    #[test]
-    #[cfg(target_os = "linux")]
-    fn test_play_ogg() {
-        test_play("tests/sound_test.ogg", true);
+    fn test_play_at3() {
+        test_play("tests/sound_test.at3", true)
     }
 
     #[test]

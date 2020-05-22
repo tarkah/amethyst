@@ -3,7 +3,8 @@ use std::{
     sync::{atomic::AtomicBool, Arc},
 };
 
-use rodio::{Decoder, SpatialSink};
+use atrac3p_decoder::Decoder;
+use rodio::SpatialSink;
 use smallvec::SmallVec;
 
 use amethyst_core::ecs::{prelude::Component, storage::BTreeStorage};
@@ -94,23 +95,8 @@ mod tests {
     }
 
     #[test]
-    fn test_play_wav() {
-        test_play("tests/sound_test.wav", true);
-    }
-
-    #[test]
-    fn test_play_mp3() {
-        test_play("tests/sound_test.mp3", true);
-    }
-
-    #[test]
-    fn test_play_flac() {
-        test_play("tests/sound_test.flac", true);
-    }
-
-    #[test]
-    fn test_play_ogg() {
-        test_play("tests/sound_test.ogg", true);
+    fn test_play_at3() {
+        test_play("tests/sound_test.at3", true);
     }
 
     #[test]
